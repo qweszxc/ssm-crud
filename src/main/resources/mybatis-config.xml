@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-config.dtd"> 
+<configuration>
+
+	<settings>
+		<setting name="mapUnderscoreToCamelCase" value="true"/>
+		<setting name="logImpl" value="LOG4J" />
+		<!-- 打开延迟加载的开关 -->
+	    <setting name="lazyLoadingEnabled" value="true"/>
+	    <!-- 将积极加载改为消极加载，即延迟加载 -->
+	    <setting name="aggressiveLazyLoading" value="false"/>
+	</settings>
+	
+	<typeAliases>
+		<package name="zej.bean"/>
+	</typeAliases>
+	<plugins>
+		<!-- 注册pagehelper插件 -->
+		<plugin interceptor="com.github.pagehelper.PageInterceptor">
+			<property name="reasonable" value="true" />
+		</plugin>
+	</plugins>
+</configuration>
